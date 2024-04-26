@@ -12,8 +12,7 @@ const RegistrationForm = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [termsChecked, setTermsChecked] = useState(false);
 
-	console.log("hii");
-
+    console.log("hiiiiiii");
     const validatePhoneNumber = (phoneNumber) => {
         const regex = /^\d{10}$/;
         return regex.test(phoneNumber);
@@ -133,7 +132,7 @@ const RegistrationForm = () => {
                                 {/* Final Step: Register */}
                                 <div id="finalStep" style={{ display: step === 5 ? 'block' : 'none' }}>
                                     <div className="form-group">
-                                        <label className="custom-control custom-checkbox"> 
+                                        <label className="custom-control custom-checkbox">
                                             <input type="checkbox" className="custom-control-input" checked={termsChecked} onChange={() => setTermsChecked(!termsChecked)} />
                                             <span className="custom-control-label"> I agree with the terms and conditions </span>
                                         </label>
