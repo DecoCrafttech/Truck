@@ -5,67 +5,62 @@ const RegistrationForm = () => {
     const [step, setStep] = useState(1);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [city, setCity] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [otpInput, setOtpInput] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [selectedCities, setSelectedCities] = useState([]);
+    const [country, setCountry] = useState('India');
     const [termsChecked, setTermsChecked] = useState(false);
-
-    console.log("hiiiiiii");
-    const validatePhoneNumber = (phoneNumber) => {
-        const regex = /^\d{10}$/;
-        return regex.test(phoneNumber);
-    };
-
-    const validatePassword = (password, confirmPassword) => {
-        return password === confirmPassword && password.length >= 6;
-    };
 
     const nextStep = () => {
         if (step === 1) {
-            if (firstName === '' || lastName === '' || city === '') {
+            if (firstName === '' || lastName === '' || phoneNumber === '' || password === '' || confirmPassword === '') {
                 toast.error('Please fill in all fields.');
+            } else if (password !== confirmPassword) {
+                toast.error('Passwords do not match.');
+            } else if (!validatePhoneNumber(phoneNumber)) {
+                toast.error('Invalid phone number format.');
             } else {
+                // Replace this with your actual code to send OTP via SMS or any other method
+                toast.success(`OTP sent successfully to ${phoneNumber}`);
                 setStep(2);
             }
         }
     };
 
     const sendOTP = () => {
-        if (!validatePhoneNumber(phoneNumber)) {
-            toast.error('Invalid phone number format.');
+        if (otpInput === '') {
+            toast.error('Please enter OTP.');
         } else {
-            // Replace this with your actual code to send OTP via SMS or any other method
-            toast.success(`OTP sent successfully to ${phoneNumber}`);
+            // Replace this with your actual code to verify OTP
+            toast.success('OTP verified successfully.');
             setStep(3);
         }
     };
 
-    const verifyOTP = () => {
-        if (otpInput === '') {
-            toast.error('Please enter OTP.');
+    const handleCityChange = (event) => {
+        const { value } = event.target;
+        if (selectedCities.includes(value)) {
+            setSelectedCities(selectedCities.filter(city => city !== value));
         } else {
-            toast.success('OTP verified successfully.');
-            setStep(4);
+            setSelectedCities([...selectedCities, value]);
         }
     };
 
-    const submitPassword = () => {
-        if (!validatePassword(password, confirmPassword)) {
-            toast.error('Passwords must match and be at least 6 characters long.');
-        } else {
-            setStep(5);
-        }
-    };
-
-    const register = (event) => {
+    const register = () => {
         if (!termsChecked) {
             toast.error('Please agree to the terms and conditions.');
-            event.preventDefault();
         } else {
+            // Replace this with your actual registration logic
             toast.success('Registration successful!');
         }
+    };
+
+    const validatePhoneNumber = (phoneNumber) => {
+        // India phone number regex validation
+        const regex = /^\d{10}$/;
+        return regex.test(phoneNumber);
     };
 
     return (
@@ -87,37 +82,9 @@ const RegistrationForm = () => {
                                         <input type="text" className="form-control" placeholder="Last name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <label>City</label>
-                                        <select className="form-control" value={city} onChange={(e) => console.log(e.target.value)} aria-label="Select city">
-                                            <option value="">Select city...</option>
-                                            <option>New York</option>
-                                            <option>Los Angeles</option>
-                                            <option>Chicago</option>
-                                        </select>
-                                    </div>
-                                    <button type="button" className="btn btn-primary btn-block" onClick={nextStep} aria-label="Next">Next</button>
-                                </div>
-
-                                {/* Step 2: Enter Phone Number */}
-                                <div id="step2" style={{ display: step === 2 ? 'block' : 'none' }}>
-                                    <div className="form-group">
                                         <label>Phone Number</label>
                                         <input type="text" className="form-control" placeholder="Phone number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
                                     </div>
-                                    <button type="button" className="btn btn-primary btn-block" onClick={sendOTP} aria-label="Send OTP">Send OTP</button>
-                                </div>
-
-                                {/* Step 3: Enter OTP */}
-                                <div id="step3" style={{ display: step === 3 ? 'block' : 'none' }}>
-                                    <div className="form-group">
-                                        <label>Enter OTP</label>
-                                        <input type="text" className="form-control" placeholder="Enter OTP" value={otpInput} onChange={(e) => setOtpInput(e.target.value)} />
-                                    </div>
-                                    <button type="button" className="btn btn-primary btn-block" onClick={verifyOTP} aria-label="Verify OTP">Verify OTP</button>
-                                </div>
-
-                                {/* Step 4: Enter Password */}
-                                <div id="step4" style={{ display: step === 4 ? 'block' : 'none' }}>
                                     <div className="form-group">
                                         <label>Password</label>
                                         <input type="password" className="form-control" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -126,18 +93,47 @@ const RegistrationForm = () => {
                                         <label>Confirm Password</label>
                                         <input type="password" className="form-control" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                                     </div>
-                                    <button type="button" className="btn btn-primary btn-block" onClick={submitPassword} aria-label="Submit">Submit</button>
+                                    <button type="button" className="btn btn-primary btn-block" onClick={nextStep} aria-label="Next">Next</button>
                                 </div>
 
-                                {/* Final Step: Register */}
-                                <div id="finalStep" style={{ display: step === 5 ? 'block' : 'none' }}>
+                                {/* Step 2: Enter OTP */}
+                                <div id="step2" style={{ display: step === 2 ? 'block' : 'none' }}>
                                     <div className="form-group">
-                                        <label className="custom-control custom-checkbox">
-                                            <input type="checkbox" className="custom-control-input" checked={termsChecked} onChange={() => setTermsChecked(!termsChecked)} />
-                                            <span className="custom-control-label"> I agree with the terms and conditions </span>
-                                        </label>
+                                        <label>Enter OTP</label>
+                                        <input type="text" className="form-control" placeholder="Enter OTP" value={otpInput} onChange={(e) => setOtpInput(e.target.value)} />
                                     </div>
-                                    <button type="submit" className="btn btn-success btn-block" onClick={register} disabled={!termsChecked} aria-label="Register">Register</button>
+                                    <button type="button" className="btn btn-primary btn-block" onClick={sendOTP} aria-label="Send OTP">Verify OTP</button>
+                                </div>
+
+                                {/* Step 3: Select City */}
+                                <div id="step3" style={{ display: step === 3 ? 'block' : 'none' }}>
+                                    <div className="form-group">
+                                        <label>Select Cities</label>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" value="New York" checked={selectedCities.includes("New York")} onChange={handleCityChange} />
+                                                New York
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" value="Los Angeles" checked={selectedCities.includes("Los Angeles")} onChange={handleCityChange} />
+                                                Los Angeles
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" value="Chicago" checked={selectedCities.includes("Chicago")} onChange={handleCityChange} />
+                                                Chicago
+                                            </label>
+                                        </div>
+                                        {/* Add more cities as needed */}
+                                    </div>
+                                    <div className="form-group form-check">
+                                        <input type="checkbox" className="form-check-input" id="termsCheck" checked={termsChecked} onChange={() => setTermsChecked(!termsChecked)} />
+                                        <label className="form-check-label" htmlFor="termsCheck">I agree to the terms and conditions</label>
+                                    </div>
+                                    <button type="button" className="btn btn-primary btn-block" onClick={register} aria-label="Register">Register</button>
                                 </div>
                             </div>
                         </div>
