@@ -12,6 +12,8 @@ const RegistrationForm = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [termsChecked, setTermsChecked] = useState(false);
 
+	console.log("hii");
+
     const validatePhoneNumber = (phoneNumber) => {
         const regex = /^\d{10}$/;
         return regex.test(phoneNumber);
