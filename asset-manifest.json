@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Truck/static/css/main.12e2814a.css",
+    "main.js": "/Truck/static/js/main.632887f7.js",
+    "index.html": "/Truck/index.html",
+    "main.12e2814a.css.map": "/Truck/static/css/main.12e2814a.css.map",
+    "main.632887f7.js.map": "/Truck/static/js/main.632887f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12e2814a.css",
+    "static/js/main.632887f7.js"
+  ]
+}
