@@ -44,7 +44,7 @@ import SignInPage from './components/section-components/signInPage';
 class Root extends Component {
     render() {
         return(
-                <HashRouter basename="/">
+                <HashRouter basename={process.env.PUBLIC_URL}>
 	                <div>
 	                <Switch>
 	                    <Route exact path="/" component={HomeV1} />
