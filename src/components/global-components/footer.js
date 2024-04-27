@@ -119,7 +119,7 @@ class Footer_v1 extends Component {
 				          </div>
 				        </div>
 				        
-				        <div className="col-xl-3 col-md-6 col-sm-12 col-12">
+				        {/* <div className="col-xl-3 col-md-6 col-sm-12 col-12">
 				          <div className="footer-widget footer-newsletter-widget">
 				            <h4 className="footer-title">Newsletter</h4>
 				            <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
@@ -134,7 +134,7 @@ class Footer_v1 extends Component {
 				            <h5 className="mt-30">We Accept</h5>
 				            <img src={publicUrl+"assets/img/icons/payment-4.png"} alt="Payment Image" />
 				          </div>
-				        </div>
+				        </div> */}
 				      </div>
 				    </div>
 				  </div>
