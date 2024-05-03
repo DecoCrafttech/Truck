@@ -1,5 +1,5 @@
 {
-  "name": "quarter",
+  "name": "Truck Message",
   "version": "0.1.0",
   "homepage": "https://DecoCrafttech.github.io/Truck",
   "private": true,
@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

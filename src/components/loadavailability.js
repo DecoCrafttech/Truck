@@ -11,12 +11,12 @@ import Footer from './global-components/footer';
 const Portfolio_V1 = () => {
     return <div>
         <Navbar />
-        <PageHeader headertitle="Our Portfolio" subheader="Portfolio" />
+        {/* <PageHeader headertitle="Our Portfolio" subheader="Portfolio" /> */}
         <PortfolioV1 />
-        <CallToActonV2 />
-        <BlogSlider sectionClass="pt-120" />
+        {/* <CallToActonV2 /> */}
+        {/* <BlogSlider sectionClass="pt-120" />
         <Sponsor />
-        <CallToActionV1 />
+        <CallToActionV1 /> */}
         <Footer />
     </div>
 }

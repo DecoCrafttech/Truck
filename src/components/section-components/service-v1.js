@@ -102,7 +102,7 @@ class ServiceV5 extends Component {
 								<span><i className="flaticon-official-documents" /></span>
 							</div>
 							<div className="ltn__feature-info">
-								<h3><Link to="/service-details">Load Availability</Link></h3>
+								<h3><Link to="/load-availability">Load Availability</Link></h3>
 								<p>over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
 							</div>
 						</div>
