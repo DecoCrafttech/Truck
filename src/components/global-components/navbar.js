@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoggedIn: false // Initially assuming user is not logged in
+        };
+    }
+
     render() {
+        const { isLoggedIn } = this.state;
         let publicUrl = process.env.PUBLIC_URL + '/';
         return (
             <div>
@@ -15,7 +23,7 @@ class Navbar extends Component {
                                         <ul>
                                             <li>
                                                 <a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you">
-                                                    <i className="icon-mail"  /> info@truckmessage.com
+                                                    <i className="icon-mail" /> info@truckmessage.com
                                                 </a>
                                             </li>
                                         </ul>
@@ -79,14 +87,29 @@ class Navbar extends Component {
                                 <div className="col ltn__header-options ltn__header-options-2 mb-sm-20">
                                     <div className="ltn__drop-menu user-menu">
                                         <ul>
-                                            <li>
-                                                <Link to="#"><i className="icon-user" /></Link>
-                                                <ul className="go-top">
-                                                    <li><Link to="/login">Sign in</Link></li>
-                                                    <li><Link to="/register">Register</Link></li>
-                                                    <li><Link to="/my-account">My Account</Link></li>
-                                                </ul>
-                                            </li>
+                                            {isLoggedIn ? (
+                                                <li>
+                                                    <Link to="/my-account" title="My Account">
+                                                        <i className="far fa-user" />
+                                                        <span className="tooltip">My Account</span>
+                                                    </Link>
+                                                </li>
+                                            ) : (
+                                                <>
+                                                    <li>
+                                                        <Link to="/login" title="Login">
+                                                            <i className="far fa-sign-in-alt" />
+                                                            <span className="tooltip">Login</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to="/register" title="Sign Up">
+                                                            <i className="fas fa-user-plus" />
+                                                            <span className="tooltip">Sign Up</span>
+                                                        </Link>
+                                                    </li>
+                                                </>
+                                            )}
                                         </ul>
                                     </div>
                                     <div className="mobile-menu-toggle d-xl-none">
@@ -122,14 +145,16 @@ class Navbar extends Component {
                         </div>
                         <div className="ltn__utilize-buttons ltn__utilize-buttons-2">
                             <ul>
-                                <li>
-                                    <Link to="/my-account" title="My Account">
-                                        <span className="utilize-btn-icon">
-                                            <i className="far fa-user" />
-                                        </span>
-                                        My Account
-                                    </Link>
-                                </li>
+                                {isLoggedIn && (
+                                    <li>
+                                        <Link to="/my-account" title="My Account">
+                                            <span className="utilize-btn-icon">
+                                                <i className="far fa-user" />
+                                            </span>
+                                            My Account
+                                        </Link>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                     </div>
