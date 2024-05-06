@@ -1607,6 +1607,9 @@ ul {
     left: auto;
   }
 }
+ .card-text{
+border: none;
+}
 
 /* ----------------------------------------------------
     Slick Slider Dots, Arrow
@@ -12830,6 +12833,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   /* width: calc(100% - 30px); */
   -webkit-box-shadow: var(--ltn__box-shadow-4);
   box-shadow: var(--ltn__box-shadow-4);
+  height: 100%;
 }
 
 .ltn__blog-item-3 .ltn__blog-img+.ltn__blog-brief {
