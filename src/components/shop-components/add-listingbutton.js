@@ -8,12 +8,11 @@ import Footer from './global-components/footer';
 const AddListing_V1 = () => {
     return <div>
         <Navbar />
-        {/* <PageHeader headertitle="Add Listing" /> */}
+        <PageHeader headertitle="Add Listing" />
         <AddListing />
-        {/* <CallToActionV1 /> */}
+        <CallToActionV1 />
         <Footer />
     </div>
-    
 }
 
 export default AddListing_V1
