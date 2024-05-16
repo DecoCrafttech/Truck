@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Truck/static/css/main.3452d9d5.css",
-    "main.js": "/Truck/static/js/main.39cef6ab.js",
+    "main.js": "/Truck/static/js/main.cba195ad.js",
     "index.html": "/Truck/index.html",
     "main.3452d9d5.css.map": "/Truck/static/css/main.3452d9d5.css.map",
-    "main.39cef6ab.js.map": "/Truck/static/js/main.39cef6ab.js.map"
+    "main.cba195ad.js.map": "/Truck/static/js/main.cba195ad.js.map"
   },
   "entrypoints": [
     "static/css/main.3452d9d5.css",
-    "static/js/main.39cef6ab.js"
+    "static/js/main.cba195ad.js"
   ]
 }
