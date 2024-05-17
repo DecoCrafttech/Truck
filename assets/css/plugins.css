@@ -4922,9 +4922,6 @@ fieldset:disabled .btn {
   outline: none;
 }
 
-.card-title {
-  margin-bottom: .5rem
-}
 
 .card-subtitle {
   margin-top: -.25rem;
@@ -4933,6 +4930,7 @@ fieldset:disabled .btn {
 
 .card-text:last-child {
   margin-bottom: 0
+
 }
 
 .card-link:hover {
@@ -4946,8 +4944,8 @@ fieldset:disabled .btn {
 .card-header {
   padding: .5rem 1rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, .03);
-  border-bottom: 1px solid rgba(0, 0, 0, .125)
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125)
 }
 
 .card-header:first-child {
