@@ -8,7 +8,8 @@ import Service from './components/service';
 import ServiceDetails from './components/service-details';
 import loadavailability from './components/loadavailability';
 import PortfolioV2 from './components/portfolio-v2';
-import PortfolioDetails from './components/portfolio-details';
+import truck_availability from './components/truckavailability';
+// import truckavailability from './components/truckavailability';
 import Team from './components/team';
 import TeamDetails from './components/team-details';
 import Faq from './components/faq';
@@ -56,7 +57,8 @@ class Root extends Component {
                         <Route path="/service-details" component={ ServiceDetails } />
                         <Route path="/load-availability" component={ loadavailability } />
                         <Route path="/portfolio-v2" component={ PortfolioV2 } />
-                        <Route path="/portfolio-details" component={ PortfolioDetails } />
+                       ?
+                        <Route path="/truck_availability" component={ truck_availability } />
                         <Route path="/team" component={ Team } />
                         <Route path="/team-details" component={ TeamDetails } />
                         <Route path="/faq" component={ Faq } />

@@ -13612,6 +13612,44 @@ blockquote::before {
     Pagination
 ---------------------------------------------------- */
 /* ltn__pagination-3 */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination-item {
+  margin: 0 5px;
+}
+
+.pagination-link {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination-link.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination-link:hover {
+  background-color: #ddd;
+}
+
+
+
+
 .ltn__pagination ul {
   margin: 0;
   padding: 0;
@@ -19433,6 +19471,7 @@ input.cart-plus-minus-box {
 .is-hide {
   display: none;
 }
+
 
 /* ----------------------------------------------------
     END

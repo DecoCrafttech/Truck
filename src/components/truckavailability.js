@@ -5,15 +5,15 @@ import PortfolioDetails from './section-components/portfolio-details';
 import CallToActionV1 from './section-components/call-to-action-v1';
 import Footer from './global-components/footer';
 
-const Portfolio_Details = () => {
+const truck_availability = () => {
     return <div>
         <Navbar />
-        <PageHeader headertitle="Portfolio Details" />
+        {/* <PageHeader headertitle="Portfolio Details" /> */}
         <PortfolioDetails />
-        <CallToActionV1 />
+        {/* <CallToActionV1 /> */}
         <Footer />
     </div>
 }
 
-export default Portfolio_Details
+export default truck_availability
 
