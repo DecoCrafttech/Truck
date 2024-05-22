@@ -5,7 +5,7 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: false // Initially assuming user is not logged in
+            isLoggedIn: true // Initially assuming user is not logged in
         };
     }
 

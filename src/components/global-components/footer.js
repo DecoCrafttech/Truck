@@ -51,34 +51,34 @@ class Footer_v1 extends Component {
 				          <div className="footer-widget footer-about-widget">
 				            <div className="footer-logo">
 				              <div className="site-logo">
-				                <img src={publicUrl+"assets/img/logo-2.png"} alt="Logo" />
+				                <img src={publicUrl+"assets/img/logo.png"} alt="Logo" />
 				              </div>
 				            </div>
-				            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+				            <p className='para'>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
 				            <div className="footer-address">
 				              <ul>
 				                <li>
-				                  <div className="footer-address-icon">
-				                    <i className="icon-placeholder" />
+				                  <div className=" para footer-address-icon">
+				                    <i className=" para icon-placeholder" />
 				                  </div>
-				                  <div className="footer-address-info">
-				                    <p>Brooklyn, New York, United States</p>
+				                  <div className="footer-address-info para">
+				                   Brooklyn, New York, United States
 				                  </div>
 				                </li>
 				                <li>
-				                  <div className="footer-address-icon">
+				                  <div className="footer-address-icon para">
 				                    <i className="icon-call" />
 				                  </div>
-				                  <div className="footer-address-info">
-				                    <p><a href="tel:+0123-456789">+0123-456789</a></p>
+				                  <div className="footer-address-info para">
+				                    <a href="tel:+0123-456789">+0123-456789</a>
 				                  </div>
 				                </li>
 				                <li>
-				                  <div className="footer-address-icon">
-				                    <i className="icon-mail" />
+				                  <div className="footer-address-icon para">
+				                    <i className="icon-mail " />
 				                  </div>
-				                  <div className="footer-address-info">
-				                    <p><a href="mailto:example@example.com">example@example.com</a></p>
+				                  <div className="footer-address-info para">
+				                   <a href="mailto:example@example.com">example@example.com</a>
 				                  </div>
 				                </li>
 				              </ul>
